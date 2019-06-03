@@ -1,0 +1,78 @@
+
+.img { 
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+.navbar {
+        width: 250px;
+        font-size: 15px;
+      
+}
+
+.text {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    color: #5392a8;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-align: right;
+    color: grey;
+    font-size: 15px;
+
+  }
+
+#main-image {
+    font-family: 'Montserrat', sans-serif;
+    height: 580px;
+    font-size: 25px;
+    color: white;
+    background: url(https://www.villanovo.fr/images/landing_pages/landing_56_133_1507643339.1920.jpg) center;
+}
+
+
+
+.wrapper {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+    opacity: 0.6;
+    font-size: 15px;
+    color: #5392a8;
+
+  }
+
+#steps ul {
+  margin: 25px 0;
+}
+#steps ul li{
+  width: 270px;
+  float: left;
+  padding-top: 140px;
+  text-align: center;
+  margin-right: 10px;
+}
+#steps h4 {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+#steps p{
+  margin-bottom: 20px;
+}
+#step-1 {
+  background: url('https://image.ibb.co/bB1wnQ/steps_icon_1_1.png') no-repeat top center;
+
+}
+#step-2 {
+  background: url('https://image.ibb.co/ghFYZ5/steps_icon_2.png') no-repeat top center;
+}
+#step-3 {
+  background: url('https://image.ibb.co/icgJ1k/steps_icon_3.png') no-repeat top center;
+}
+
