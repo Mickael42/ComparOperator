@@ -59,12 +59,12 @@ class Manager
         return $allOperators;
     }
 
+
     public function updateOperatorToPremium($idOperator)
     {
         $req = $this->bdd->prepare("UPDATE tour_operators 
                                     SET is_premium = is_premium + 1
                                     WHERE id = ?");
-
         $req->execute(array($idOperator));
      }
 
@@ -73,16 +73,20 @@ class Manager
     { 
         $createTourOperator = $this->bdd->prepare("INSERT INTO tour_operators(name, grade, link, is_premium)
                                                 VALUES(?,?,?,?)");
-
         $createTourOperator->execute(array($operatorName, 0, $operatorLink,0));
     }
+
 
     public function createDestination($location, $price, $id_tour_operator)
     { 
         $createDestination = $this->bdd->prepare("INSERT INTO destinations(location, price, id_tour_operator)
                                                 VALUES(?,?,?)");
-
         $createDestination->execute(array($location, $price, $id_tour_operator));
+
+        $addDestinationFakeTO = $this->bdd->prepare("INSERT INTO destinations(location, price, id_tour_operator)
+        VALUES(?,?,?)");
+        $addDestinationFakeTO->execute(array($location, 0, 2));
+
     }
 }
 

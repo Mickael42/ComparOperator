@@ -14,14 +14,14 @@
 
 <body>
 
-    <div class="formAddNewTO">
+<!-- forumaire pour l'ajout d'un nouveau TO  -->
+    <div class="formAdmin">
         <h3>Ajouter un nouveau Tour Operator</h3>
         <?php  if (isset($_GET['error']))
                 {
                   echo '<span class="text-danger">Ce tour opérateur est déjà enregistré dans la base de donnée !</span>';
                 };
                 ?>
-
         <form action="../layout/addTourOperatorProcessing.php" method="post">
             <div class="form-group">
                 <label for="nameTourOperator">Nom du Tour Operateur :</label>
@@ -35,6 +35,28 @@
             <button type="submit" class="btn btn-primary">Valider</button>
         </form>
     </div>
+
+    <div class="formAdmin">
+        <h3>Ajouter un nouveau Tour Operator</h3>
+        <?php  if (isset($_GET['error']))
+                {
+                  echo '<span class="text-danger">Ce tour opérateur est déjà enregistré dans la base de donnée !</span>';
+                };
+                ?>
+        <form action="../layout/addTourOperatorProcessing.php" method="post">
+            <div class="form-group">
+                <label for="nameTourOperator">Nom du Tour Operateur :</label>
+                <input type="text" name="nameTourOperator" class="form-control" id="nameTourOperator" placeholder="Entrez le nom" required>
+            </div>
+            <div class="form-group">
+                <label for="linkTourOperator">Lien vers le site du Tour Operateur : </label>
+                <input type="text" class="form-control" name="linkTourOperator" id="linkTourOperator" placeholder="Entrez le lien" required>
+                <small id="linkTourOperatorHelp" class="form-text text-muted">Le lien sera uniquement visible si le Tour Operatorest Premimum.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Valider</button>
+        </form>
+    </div>
+
 
 
 
