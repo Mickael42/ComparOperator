@@ -3,12 +3,13 @@
 //chargement de la  class Manager
 require "../layout/manager.php";
 //permet de charger automatiquement les classes dès qu'elles sont instanciées
-function chargerClass($class){
-    require "../partials/classes/".$class. ".php";
+function chargerClass($class)
+{
+    require "../partials/classes/" . $class . ".php";
 }
 spl_autoload_register('chargerClass');
 
-$bdd= new Manager('127.0.0.1');
+$bdd = new Manager('127.0.0.1');
 ?>
 
 
@@ -21,34 +22,56 @@ $bdd= new Manager('127.0.0.1');
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <title>ComparOperator</title>
 
-<?php include('../partials/header.php') ?>
+    <?php include('../partials/header.php') ?>
 
 </head>
 <?php include('../partials/callToActionBanner.php') ?>
 
 <body>
+    <?php
+    //on récupère toutes les destinations dans la BDD
+    $allDestinations = $bdd->getAllDestination();
+    ?>
+
+    <form action="" method="get">
+        <label for="mdb-select md-form">Choissiez votre destination</label>
+        <select class="mdb-select md-form" id="selection">
+            <option value="" disabled selected>Liste des destination</option>
+
+            <?php
+            foreach ($allDestinations as $destination) {
+
+                //on récupère et affiche le nom de la destination
+                $destination = new Destination($destination);
+                $nameDestination = $destination->getLocation();
+                echo ('<option value="' . $nameDestination . '">' . $nameDestination . '</option>');
+            }
+
+            ?>
+        </select>
+        <input type="submit" value="Valider">
+    </form>
+
+    <h3 class="titreContainerCard">Toutes nos destinations :</h3>
     <div class="container">
         <div class="row">
-<?php 
-//on récupère toutes les destinations dans la BDD
-$allDestinations = $bdd->getAllDestination();
+            <?php
 
-//pour chaque destinations
-foreach ($allDestinations as $destination) {
+            //pour chaque destinations
+            foreach ($allDestinations as $destination) {
 
-//on récupère le nom de la destination
-    $destination1= new Destination($destination);
-    $nameDestination = $destination1->getLocation();
+                //on récupère le nom de la destination
+                $destination1 = new Destination($destination);
+                $nameDestination = $destination1->getLocation();
 
-//on affiche la card avec le nom de la destination
-    $card= new Card($nameDestination);
-}
-?>
+                //on affiche la card avec le nom de la destination
+                $card = new Card($nameDestination);
+            }
+            ?>
 
- <!-- ici les cards avec les tours operators + destinations -->
 
 </body>
 <?php include('../partials/footer.php') ?>

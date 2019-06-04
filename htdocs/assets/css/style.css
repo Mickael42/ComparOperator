@@ -6,9 +6,15 @@
 } 
 
 .navbar {
-        width: 250px;
+        width: 100%;
         font-size: 15px;
-      
+        height:70px; 
+}
+
+.navbar-nav.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
 }
 
 .text {
@@ -45,6 +51,9 @@ body {
     color: #5392a8;
 
   }
+
+  /* Style footer */
+
 footer{
   margin-top : 50px;
   border-top: 1px solid #a9aaaa;
@@ -53,7 +62,7 @@ footer{
   width: 100%;
 }
 
-/* Style footer */
+
 
 #steps ul {
   margin: 25px 0;
@@ -87,9 +96,16 @@ footer{
 
 /* Style Cards */
 
+.titreContainerCard{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
 .cardDestination{
   margin : 3px;
-  margin-top: 10px;
+  margin-top: 30px;
   height: 235px;
   width: 250px;
   text-align: center;
@@ -111,6 +127,7 @@ footer{
 .card-img-overlay{
   opacity:0;
   color: white;
+  transition: all 320ms ease;
 }
 
 .card-img-overlay:hover{
@@ -119,6 +136,12 @@ footer{
   -webkit-box-shadow: 6px 4px 3px 0px rgba(0,0,0,0.47); 
   box-shadow: 6px 4px 3px 0px rgba(0,0,0,0.47); 
   transition: all 320ms ease;
+
+}
+
+.formAddNewTO{
+  text-align: left;
+  width : 400px;
 
 }
 

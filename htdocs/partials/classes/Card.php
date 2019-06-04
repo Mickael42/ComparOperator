@@ -12,7 +12,7 @@ class Card
       
             <div class="card-img-overlay">
                 <h5 class="card-title">'.$destination.'</h5>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="#" class="btn btn-primary">Voir nos offres</a>
             </div>
           </div>
           </div>');
