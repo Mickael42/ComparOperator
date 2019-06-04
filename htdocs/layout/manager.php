@@ -16,7 +16,7 @@ class Manager
 
     public function getAllDestination()
     {
-        $rep = $this->bdd->query("SELECT * FROM destinations");
+        $rep = $this->bdd->query("SELECT * FROM destinations WHERE id_tour_operator=2");
         $allDestinations = $rep->fetchAll();
         return $allDestinations;
     }

@@ -1,10 +1,9 @@
-
 .img { 
 
     display: block;
     margin-left: auto;
     margin-right: auto 
-}
+} 
 
 .navbar {
         width: 250px;
@@ -23,7 +22,7 @@ body {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     text-align: right;
-    color: grey;
+    color: #a9aaaa;
     font-size: 15px;
 
   }
@@ -37,7 +36,6 @@ body {
 }
 
 
-
 .wrapper {
     width: 940px;
     margin: 0 auto;
@@ -47,9 +45,19 @@ body {
     color: #5392a8;
 
   }
+footer{
+  margin-top : 50px;
+  border-top: 1px solid #a9aaaa;
+  margin-left: auto;
+  margin-right: auto ;
+  width: 100%;
+}
+
+/* Style footer */
 
 #steps ul {
   margin: 25px 0;
+
 }
 #steps ul li{
   width: 270px;
@@ -64,6 +72,7 @@ body {
 }
 #steps p{
   margin-bottom: 20px;
+  color: black;
 }
 #step-1 {
   background: url('https://image.ibb.co/bB1wnQ/steps_icon_1_1.png') no-repeat top center;
@@ -74,5 +83,42 @@ body {
 }
 #step-3 {
   background: url('https://image.ibb.co/icgJ1k/steps_icon_3.png') no-repeat top center;
+}
+
+/* Style Cards */
+
+.cardDestination{
+  margin : 3px;
+  margin-top: 10px;
+  height: 235px;
+  width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-img-top{
+  width: 100%;
+  height: 100%;
+
+}
+ 
+.card-title{
+  font-size: 35px;
+  margin-top : 40px;
+  margin-bottom: 30px;
+}
+
+.card-img-overlay{
+  opacity:0;
+  color: white;
+}
+
+.card-img-overlay:hover{
+  opacity: 1;
+  background-color: rgba(57, 65, 65, 0.788);
+  -webkit-box-shadow: 6px 4px 3px 0px rgba(0,0,0,0.47); 
+  box-shadow: 6px 4px 3px 0px rgba(0,0,0,0.47); 
+  transition: all 320ms ease;
+
 }
 

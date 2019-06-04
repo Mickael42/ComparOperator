@@ -6,14 +6,11 @@ class Destination {
     private $price;
     private $id_tour_operator;
 
-    public function __construct(array $destinations){
-      
-            $this->id = $destinations['id'];
-            $this->location = $destinations['location'];
-            $this->price = $destinations['price'];
-            $this->id_tour_operator = $destinations['id_tour_operator'];
-            
-        
+    public function __construct($destination){
+            $this->id = $destination['id'];
+            $this->location = $destination['location'];
+            $this->price = $destination['price'];
+            $this->id_tour_operator = $destination['id_tour_operator'];
     }
 
     public function getId(){
