@@ -83,10 +83,6 @@ class Manager
                                                 VALUES(?,?,?)");
         $createDestination->execute(array($location, $price, $id_tour_operator));
 
-        $addDestinationFakeTO = $this->bdd->prepare("INSERT INTO destinations(location, price, id_tour_operator)
-        VALUES(?,?,?)");
-        $addDestinationFakeTO->execute(array($location, 0, 2));
-
     }
 }
 

@@ -20,4 +20,4 @@ foreach ($allOperator as $operator) {
 }
 
 $bdd->createTourOperator($nameTourOperator, $linkTourOperator);
-header('Location: ../pages/admin.php'); 
+header('Location: ../pages/pagesAdmin/homePageAdmin.php?validation1=success'); 

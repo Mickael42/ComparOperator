@@ -141,8 +141,62 @@ footer{
 
 /* Style partie Admin */
 .formAdmin{
+  transform: translateY(90px);
+  padding: 10px;
   text-align: left;
-  width : 400px;
+  width : 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color : white;
+  background-color: #b4b5b6b6;
+}
+.titleForm{
+  text-align: center;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
 
+
+.contentPage{
+  background: url(https://www.villanovo.fr/images/landing_pages/landing_56_133_1507643339.1920.jpg) center;
+  filter: grayscale(60%);
+  -webkit-filter: grayscale(60%);
+  -moz-filter: grayscale(60%);
+  height: 100vh;
+  z-index : 1;
+}
+
+.successMessage{
+  background: #7ed67973;
+  color : green;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  margin-top : 150px;
+  width: 500px;
+}
+
+.sidebar {
+  position: absolute;
+  z-index: 5;
+  width : 300px;
+  background-color: #f8f9fa;
+  flex: 0 0 200px;
+  height: 100vh;
+  display: inherit;
+  flex-direction: column;
+  text-align: left;
+}
+
+.titleSidebar{
+  margin: 20px;
+  padding:10px;
+  color:black;
+  text-align: center;
+}
+
+.linkSidebar{
+  margin: 30px;
+  color : black;
 }
 

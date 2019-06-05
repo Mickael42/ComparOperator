@@ -7,14 +7,13 @@ class TourOperator {
     private $link;
     private $is_premium;
 
-    public function __construct(array $operators){
-        foreach($operators as $operator){
-            $this->id = $operator[0];
-            $this->name = $operator[1];
-            $this->grade = $operator[2];
-            $this->link = $operator[3];
-            $this->is_premium = $operator[4];
-        }
+    public function __construct(array $operator){
+            $this->id = $operator['id'];
+            $this->name = $operator['name'];
+            $this->grade = $operator['grade'];
+            $this->link = $operator['link'];
+            $this->is_premium = $operator['is_premium'];
+        
     }
 
     public function getId(){
