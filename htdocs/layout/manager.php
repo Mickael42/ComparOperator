@@ -21,13 +21,22 @@ class Manager
         return $allDestinations;
     }
 
-    public function getOperatorByDestination($idOperator)
+    public function getOperatorByDestination($nameDestination)
     {
-        $req = $this->bdd->prepare("SELECT * FROM tour_operators INNER JOIN destinations WHERE id_tour_operator= ?");
+        $req = $this->bdd->prepare("SELECT * FROM destinations 
+                                    INNER JOIN tour_operators 
+                                    ON destinations.id_tour_operator = tour_operators.id  
+                                    WHERE destinations.location= ? 
+                                    EXCEPT 
+                                    SELECT * FROM destinations
+                                    INNER JOIN tour_operators 
+                                    ON destinations.id_tour_operator = tour_operators.id  
+                                    WHERE id_tour_operator = 2
+                                    ");
         $req->execute(array(
-            $idOperator
+            $nameDestination
         ));
-        $operatorByDestination = $req->fetch();
+        $operatorByDestination = $req->fetchAll();
         return $operatorByDestination;
     }
 
@@ -63,7 +72,7 @@ class Manager
     public function updateOperatorToPremium($idOperator)
     {
         $req = $this->bdd->prepare("UPDATE tour_operators 
-                                    SET is_premium = is_premium + 1
+                                    SET is_premium = 1
                                     WHERE id = ?");
         $req->execute(array($idOperator));
      }

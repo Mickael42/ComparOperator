@@ -66,7 +66,7 @@ $allDestinations = $bdd->getAllDestination();
                 <label for="price">Précisez le prix</label>
                 <input type="text" class="form-control" name="price" id="price" placeholder="Entrez le prix" required>
             </div>
-            <button type="submit" class="btn btn-primary">Valider</button>
+            <button type="submit" class="btn btn-primary btnForm">Valider</button>
         </form>
     </div>
 </div>

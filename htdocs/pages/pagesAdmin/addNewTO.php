@@ -26,6 +26,7 @@ $allOperators = $bdd->getAllOperator();
 
 
     <!-- forumaire pour l'ajout d'un nouveau TO  -->
+<div class="contentPage">
     <div class="formAdmin">
         <h3 class="titleForm">Ajouter un nouveau Tour Operateur</h3>
         <?php if (isset($_GET['error'])) {
@@ -40,10 +41,11 @@ $allOperators = $bdd->getAllOperator();
             <div class="form-group">
                 <label for="linkTourOperator">Lien vers le site du Tour Operateur : </label>
                 <input type="text" class="form-control" name="linkTourOperator" id="linkTourOperator" placeholder="Entrez le lien" required>
-                <small id="linkTourOperatorHelp" class="form-text text-muted">Le lien sera uniquement visible si le Tour Operatorest Premimum.</small>
+                <small id="linkTourOperatorHelp" class="form-text" style="color:white">Le lien sera uniquement visible si le Tour Operatorest Premimum.</small>
             </div>
             <button type="submit" class="btn btn-primary">Valider</button>
         </form>
+    </div>
     </div>
 </body>
 

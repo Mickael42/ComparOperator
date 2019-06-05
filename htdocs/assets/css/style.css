@@ -27,7 +27,6 @@
 body {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    text-align: right;
     color: #a9aaaa;
     font-size: 15px;
 
@@ -52,17 +51,22 @@ body {
 
   }
 
-  /* Style footer */
 
-footer{
+.selectionDestination{
+text-align: center;
+
+}
+
+  /* Style brandBanner */
+
+
+#steps{
   margin-top : 50px;
   border-top: 1px solid #a9aaaa;
   margin-left: auto;
   margin-right: auto ;
   width: 100%;
 }
-
-
 
 #steps ul {
   margin: 25px 0;

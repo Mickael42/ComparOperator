@@ -34,31 +34,28 @@ $bdd = new Manager('127.0.0.1');
     //on récupère toutes les destinations dans la BDD
     $allDestinations = $bdd->getAllDestination();
     ?>
+        <form action="pageDestination.php" class="selectionDestination" method="get">
+                <label for="mdb-select md-form">Choissiez votre destination</label>
+                <select class="mdb-select md-form" id="selection" name="selectionDestination">
+                    <option value="" disabled selected>Liste des destination</option>
+                    <?php
+                    foreach ($allDestinations as $destination) {
 
-    <form action="" method="get">
-        <label for="mdb-select md-form">Choissiez votre destination</label>
-        <select class="mdb-select md-form" id="selection">
-            <option value="" disabled selected>Liste des destination</option>
-
-            <?php
-            foreach ($allDestinations as $destination) {
-
-                //on récupère et affiche le nom de la destination
-                $destination = new Destination($destination);
-                $nameDestination = $destination->getLocation();
-                echo ('<option value="' . $nameDestination . '">' . $nameDestination . '</option>');
-            }
-
-            ?>
-        </select>
-        <input type="submit" value="Valider">
-    </form>
+                        //on récupère et affiche le nom de la destination
+                        $destination = new Destination($destination);
+                        $nameDestination = $destination->getLocation();
+                        echo ('<option value="' . $nameDestination . '">' . $nameDestination . '</option>');
+                    }
+                    ?>
+                </select>
+                <input type="submit" value="Valider"> 
+        </form>
+ 
 
     <h3 class="titreContainerCard">Toutes nos destinations :</h3>
     <div class="container">
         <div class="row">
             <?php
-
             //pour chaque destinations
             foreach ($allDestinations as $destination) {
 
@@ -70,10 +67,12 @@ $bdd = new Manager('127.0.0.1');
                 $card = new Card($nameDestination);
             }
             ?>
-
-
+        </div>
+    </div>
+    <?php include('../partials/brandBanner.php') ?>
+    <?php include('../partials/footer.php') ?>
 </body>
-<?php include('../partials/footer.php') ?>
+
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

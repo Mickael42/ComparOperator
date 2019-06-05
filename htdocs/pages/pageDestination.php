@@ -1,12 +1,21 @@
 <?php
-require "../../layout/manager.php";
-require "../../partials/classes/Destination.php";
-require "../../partials/classes/TourOperator.php";
+
+//chargement de la  class Manager
+require "../layout/manager.php";
+//permet de charger automatiquement les classes dès qu'elles sont instanciées
+function chargerClass($class)
+{
+    require "../partials/classes/" . $class . ".php";
+}
+spl_autoload_register('chargerClass');
 $bdd = new Manager('127.0.0.1');
-$allDestinations = $bdd->getAllDestination();
-$allOperators = $bdd->getAllOperator();
+$nameDestination = $_GET['selectionDestination'];
+
+$allOperator = $bdd->getOperatorByDestination($nameDestination);
+
 
 ?>
+
 
 
 <!DOCTYPE html>
@@ -17,27 +26,17 @@ $allOperators = $bdd->getAllOperator();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <title>ComparOperator/Administrateur</title>
+    <title>ComparOperator</title>
 </head>
+<?php include('../partials/header.php');
+var_dump($allOperator);
+?>
+<body>
 
-<?php include('../../partials/headerAdmin.php') ?>
-
-<body class="bodyAdmin" >
-    <?php include('../../partials/sidebar.php') ?>
-
-<div class="contentPage">
-    <?php if (isset($_GET['validation'])) {
-            echo '<p class="successMessage">La nouvelle destination a bien été enregistré!</p>';
-        } else if (isset($_GET['validation1'])) {
-            echo '<p class="successMessage">Le nouveau tour opérateur a bien été enregistré!</p>';
-        } else if (isset($_GET['validation2'])) {
-            echo '<p class="successMessage">Le  tour opérateur est bien passé en Premium!</p>';
-        }?>
-</div>
-
-
+    <?php include('../partials/brandBanner.php') ?>
+    <?php include('../partials/footer.php') ?>
 </body>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
