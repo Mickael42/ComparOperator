@@ -5,6 +5,7 @@ class TourOperator {
     private $name;
     private $grade;
     private $link;
+    private $imgPath;
     private $is_premium;
 
     public function __construct(array $operator){
@@ -12,6 +13,7 @@ class TourOperator {
             $this->name = $operator['name'];
             $this->grade = $operator['grade'];
             $this->link = $operator['link'];
+            $this->imgPath = $operator['imgPath'];
             $this->is_premium = $operator['is_premium'];
         
     }
@@ -34,6 +36,10 @@ class TourOperator {
 
     public function getPremium(){
         return $this->is_premium;
+    }
+
+    public function getImgPath(){
+        return $this->imgPath;
     }
 
 }

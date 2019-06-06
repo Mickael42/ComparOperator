@@ -38,7 +38,7 @@ body {
     height: 580px;
     font-size: 25px;
     color: white;
-    background: url(http://img.archiexpo.fr/images_ae/projects/images-g/haji-joannides-greg-reconstitue-interieur-maison-grecque-ruinee-ile-xviieme-siecle-10825-9420659.jpg) center;
+    background: url(../assets/img/) center;
 } 
 
 
@@ -97,14 +97,14 @@ text-align: center;
   color: black;
 }
 #step-1 {
-  background: url('https://image.ibb.co/bB1wnQ/steps_icon_1_1.png') no-repeat top center;
+  background: url('../img/icons/steps_icon_1_1.png') no-repeat top center;
 
 }
 #step-2 {
-  background: url('https://image.ibb.co/ghFYZ5/steps_icon_2.png') no-repeat top center;
+  background: url('../img/icons/steps_icon_2.png') no-repeat top center;
 }
 #step-3 {
-  background: url('https://image.ibb.co/icgJ1k/steps_icon_3.png') no-repeat top center;
+  background: url('../img/icons/steps_icon_3.png') no-repeat top center;
 }
 
 /* Style Cards */
