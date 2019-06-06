@@ -4,10 +4,10 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light mx-auto">
         <ul class="nav navbar-nav navbar-center">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="main.php">Accueil <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Destinations</a>
+            <a class="nav-link" href="#listDestinations">Destinations</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contacts</a>

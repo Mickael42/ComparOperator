@@ -9,7 +9,7 @@ $allDestinations = $bdd->getAllDestination();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html id='htmlAdmin' lang="en">
 
 <head>
     <meta charset="UTF-8">
