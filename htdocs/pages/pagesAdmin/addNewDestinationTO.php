@@ -30,6 +30,10 @@ $allDestinations = $bdd->getAllDestination();
 <div class="contentPage">
     <div class="formAdmin">
         <h3 class="titleForm">Ajouter une nouvelle destination à un Tour Operateur</h3>
+        <?php if (isset($_GET['error'])) {
+                echo '<span class="text-danger">Impossible d\'ajouter une destination à ce TO, veuillez en choissir un autre !</span>';
+            };
+            ?>
         <form action="../../layout/addNewDestinationToTOProcessing.php" method="post">
             <div class="form-group">
                 <label for="mdb-select md-form">Choissiez une destination</label>

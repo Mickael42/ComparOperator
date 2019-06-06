@@ -1,7 +1,7 @@
 <?php
 
 $nameDestination = $_POST['nameDestination'];
-$nameTO = $_POST['nameTO']; 
+$nameTO = $_POST['nameTO'];
 $priceDestination = $_POST['price'];
 
 //chargement de la  class Manager
@@ -14,10 +14,15 @@ $allOperator = $bdd->getAllOperator();
 
 //on recher l'Id du TO séléctionner
 foreach ($allOperator as $operator) {
-    if ($operator['name']== $nameTO){
-        $idTO= $operator['id']; 
-        }
+    if ($nameTO == 'selectorDestination') {
+        header('Location: ../pages/pagesAdmin/addNewDestinationTO.php?error=invalid');
+        exit;
+    }
+
+    if ($operator['name'] == $nameTO) {
+        $idTO = $operator['id'];
+    }
 }
 
 $bdd->createDestination($nameDestination, $priceDestination, $idTO);
-header('Location: ../pages/pagesAdmin/homePageAdmin.php?validation=Success'); 
+header('Location: ../pages/pagesAdmin/homePageAdmin.php?validation=Success');

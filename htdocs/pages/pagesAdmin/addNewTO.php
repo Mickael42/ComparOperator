@@ -33,7 +33,7 @@ $allOperators = $bdd->getAllOperator();
             echo '<span class="text-danger">Ce tour opérateur est déjà enregistré dans la base de donnée !</span>';
         };
         ?>
-        <form action="../../layout/addTourOperatorProcessing.php" method="post">
+        <form enctype="multipart/form-data" action="../../layout/addTourOperatorProcessing.php" method="post">
             <div class="form-group">
                 <label for="nameTourOperator">Nom du Tour Operateur :</label>
                 <input type="text" name="nameTourOperator" class="form-control" id="nameTourOperator" placeholder="Entrez le nom" required>
@@ -42,6 +42,10 @@ $allOperators = $bdd->getAllOperator();
                 <label for="linkTourOperator">Lien vers le site du Tour Operateur : </label>
                 <input type="text" class="form-control" name="linkTourOperator" id="linkTourOperator" placeholder="Entrez le lien" required>
                 <small id="linkTourOperatorHelp" class="form-text" style="color:white">Le lien sera uniquement visible si le Tour Operatorest Premimum.</small>
+            </div>
+            <div class="form-group">
+                <label for="addLogoTO">Ajouter un logo : </label>
+                <input type="file" name="addLogoTO" id="addLogoTO" required>
             </div>
             <button type="submit" class="btn btn-primary">Valider</button>
         </form>

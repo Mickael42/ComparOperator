@@ -15,12 +15,13 @@
   position: absolute;
   left: 50%;
   transform: translatex(-50%);
+  
 }
 
 .text {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     color: #5392a8;
 }
 
@@ -30,15 +31,15 @@ body {
     color: #a9aaaa;
     font-size: 15px;
 
-  }
+}
 
 #main-image {
     font-family: 'Montserrat', sans-serif;
     height: 580px;
     font-size: 25px;
     color: white;
-    background: url(https://www.villanovo.fr/images/landing_pages/landing_56_133_1507643339.1920.jpg) center;
-}
+    background: url(http://img.archiexpo.fr/images_ae/projects/images-g/haji-joannides-greg-reconstitue-interieur-maison-grecque-ruinee-ile-xviieme-siecle-10825-9420659.jpg) center;
+} 
 
 
 .wrapper {
@@ -47,9 +48,11 @@ body {
     padding: 0 10px;
     opacity: 0.6;
     font-size: 15px;
-    color: #5392a8;
-
-  }
+    text-align: center;
+    left:20px;
+    top:20px;
+   
+  } 
 
 
 .selectionDestination{
@@ -68,6 +71,11 @@ text-align: center;
   width: 100%;
 }
 
+#brandSteps{
+  margin-right: auto;
+  margin-left: auto;
+}
+
 #steps ul {
   margin: 25px 0;
 
@@ -78,6 +86,7 @@ text-align: center;
   padding-top: 140px;
   text-align: center;
   margin-right: 10px;
+  
 }
 #steps h4 {
   text-transform: uppercase;
@@ -142,7 +151,7 @@ text-align: center;
   transition: all 320ms ease;
 
 }
-/* Style page Destiantion */
+/* Style page Destination */
 
 #imageDestination{
 
@@ -239,4 +248,7 @@ overflow : hidden;
   margin: 30px;
   color : black;
 }
+
+
+
 

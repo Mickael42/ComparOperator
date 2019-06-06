@@ -5,14 +5,29 @@ require "../layout/manager.php";
 //permet de charger automatiquement les classes dès qu'elles sont instanciées
 function chargerClass($class)
 {
-    require "../partials/classes/" . $class . ".php";
+  require "../partials/classes/" . $class . ".php";
 }
 spl_autoload_register('chargerClass');
+
+
 $bdd = new Manager('127.0.0.1');
 $nameDestination = $_GET['selectionDestination'];
+//on séléctionne tous les TO qui proposent un séjour pour la destiantion choisie
+$allOperators = $bdd->getOperatorByDestination($nameDestination);
 
-$allOperator = $bdd->getOperatorByDestination($nameDestination);
+//on séléctionne toutes la table destinations 
+$allDestinations = $bdd->getAllDestination();
 
+//on séléctionne toutes les infos de la destination qui a été selectionnée
+foreach($allDestinations as $destination){
+  if ($destination['location'] == $nameDestination){
+    $destinationSelected = new Destination($destination);
+    $destinationSelectedName = $destinationSelected->getLocation();
+    $destinationSelectedImg = $destinationSelected->getImgName();
+  }
+}
+
+require "../partials/classes/Card.php";
 
 ?>
 
@@ -22,54 +37,47 @@ $allOperator = $bdd->getOperatorByDestination($nameDestination);
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <title>ComparOperator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <title>ComparOperator</title>
 </head>
-<?php include('../partials/header.php');
-var_dump($allOperator);
-?>
+<?php include('../partials/header.php');?>
 
 <body>
 
-    <section id="imageDestination" style="background: url(https://www.villanovo.fr/images/landing_pages/landing_56_133_1507643339.1920.jpg) center;">
-        <div class="titleDestination">
-            <h2>Nos séjours en Grèce </h2>
-            <h5>Cillum consectetur commodo do aute sint.</h5>
-        </div>
-    </section>
-
-    <div class="destinationParagraphe">
-        <h3>Occaecat ex irure proident </h3>
-        <p>Exercitation culpa Lorem laboris ad nisi veniam labore nostrud cillum adipisicing ipsum. Cupidatat cillum eu culpa aliqua enim excepteur labore in cupidatat excepteur in elit sint ad. Eiusmod consectetur proident quis aute enim dolore ex nulla. Nisi est ullamco pariatur irure et enim do occaecat anim amet reprehenderit voluptate sint tempor. Ipsum culpa ipsum irure ex non. Tempor et commodo nisi nulla deserunt voluptate occaecat magna. Duis consequat officia Lorem fugiat incididunt voluptate est ullamco labore elit consectetur.</p>
-        <h3>Quis laboris enim aliqua dolor ! </h3>
-        <p>Excepteur voluptate adipisicing sit consectetur sunt tempor quis Lorem non. Sit laborum ex irure sunt laborum proident magna sit esse esse ex dolor pariatur labore. Fugiat adipisicing incididunt sint cillum sunt mollit irure cupidatat duis excepteur ea cillum dolor labore.</p>
+  <section id="imageDestination" style="background: url(../assets/img/<?php echo($destinationSelectedImg)?>);background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <div class="titleDestination">
+      <h2>Nos séjours en <?=$destinationSelectedName?> </h2>
+      <h5>Cillum consectetur commodo do aute sint.</h5>
     </div>
+  </section>
 
-    <h3 class="titreContainerCard">Liste des tours opérateurs :</h3>
-    <div class="container">
-        <div class="row">
+  <div class="destinationParagraphe">
+    <h3>Occaecat ex irure proident </h3>
+    <p>Exercitation culpa Lorem laboris ad nisi veniam labore nostrud cillum adipisicing ipsum. Cupidatat cillum eu culpa aliqua enim excepteur labore in cupidatat excepteur in elit sint ad. Eiusmod consectetur proident quis aute enim dolore ex nulla. Nisi est ullamco pariatur irure et enim do occaecat anim amet reprehenderit voluptate sint tempor. Ipsum culpa ipsum irure ex non. Tempor et commodo nisi nulla deserunt voluptate occaecat magna. Duis consequat officia Lorem fugiat incididunt voluptate est ullamco labore elit consectetur.</p>
+    <h3>Quis laboris enim aliqua dolor ! </h3>
+    <p>Excepteur voluptate adipisicing sit consectetur sunt tempor quis Lorem non. Sit laborum ex irure sunt laborum proident magna sit esse esse ex dolor pariatur labore. Fugiat adipisicing incididunt sint cillum sunt mollit irure cupidatat duis excepteur ea cillum dolor labore.</p>
+  </div>
 
-        <div class="col-sm">
-          <div class="card cardDestination">
-            <img class="card-img-top" src="https://picsum.photos/230/230"  alt="Card image cap">
-              <div class="card-img-overlay">
-                <h5 class="card-title">' . $destination . '</h5>
-                  <form action="pageDestination.php" = method="get">
-                  <input type ="hidden" name="selectionDestination" value="' . $destination . '">
-                  <input type="submit" class="btn btn-primary" value="Voir nos offres"> 
-                  </form>
-              </div>
-            </div>
-          </div>
+  <h3 class="titreContainerCard">Liste des tours opérateurs :</h3>
+  <div class="container">
+    <div class="row">
+      <?php
+      foreach ($allOperators as $operator) {
+      $nameTO = $operator['name'];
+      $priceDestinationTO = $operator['price'];
+      $cardDestinationByTO = new CardDestinationTO ($nameTO, $priceDestinationTO);
+
+      }
+      ?>
 
 
-    <?php include('../partials/brandBanner.php') ?>
-    <?php include('../partials/footer.php') ?>
+      <?php include('../partials/brandBanner.php') ?>
+      <?php include('../partials/footer.php') ?>
 </body>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

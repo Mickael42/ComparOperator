@@ -1,6 +1,6 @@
 <header>
   <a href="main.php"><img class="img" style="max-width:250px;" src="/assets/img/logo2.png"></a>
-  <p class="text">Le comparateur en ligne pour vos vacances<p>
+  <p class="text">LE COMPARATEUR EN LIGNE POUR VOS VANCANCES<p>
       <nav class="navbar navbar-expand-lg navbar-light bg-light mx-auto">
         <ul class="nav navbar-nav navbar-center">
           <li class="nav-item active">

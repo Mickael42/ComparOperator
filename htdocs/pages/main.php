@@ -45,9 +45,10 @@ $bdd = new Manager('192.168.1.15');
                 //on récupère le nom de la destination
                 $destination1 = new Destination($destination);
                 $nameDestination = $destination1->getLocation();
+                $imgDestiantion = $destination1->getImgName();
 
                 //on affiche la card avec le nom de la destination
-                $card = new Card($nameDestination);
+                $card = new Card($nameDestination, $imgDestiantion);
             }
             ?>
         </div>

@@ -78,11 +78,11 @@ class Manager
      }
 
 
-    public function createTourOperator($operatorName, $operatorLink)
+    public function createTourOperator($operatorName, $operatorLink, $imgPath)
     { 
-        $createTourOperator = $this->bdd->prepare("INSERT INTO tour_operators(name, grade, link, is_premium)
-                                                VALUES(?,?,?,?)");
-        $createTourOperator->execute(array($operatorName, 0, $operatorLink,0));
+        $createTourOperator = $this->bdd->prepare("INSERT INTO tour_operators(name, grade, link, imgPath, is_premium)
+                                                VALUES(?,?,?,?,?)");
+        $createTourOperator->execute(array($operatorName, 0, $operatorLink,$imgPath,0));
     }
 
 

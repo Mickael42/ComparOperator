@@ -5,12 +5,14 @@ class Destination {
     private $location;
     private $price;
     private $id_tour_operator;
+    private $imgName;
 
     public function __construct($destination){
             $this->id = $destination['id'];
             $this->location = $destination['location'];
             $this->price = $destination['price'];
             $this->id_tour_operator = $destination['id_tour_operator'];
+            $this->imgName = $destination['imgName'];
     }
 
     public function getId(){
@@ -29,5 +31,7 @@ class Destination {
         return $this->id_tour_operator;
     }
 
-
+    public function getImgName(){
+        return $this->imgName;
+    }
 }

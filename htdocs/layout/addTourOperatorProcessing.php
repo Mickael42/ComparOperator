@@ -19,5 +19,16 @@ foreach ($allOperator as $operator) {
     }
 }
 
-$bdd->createTourOperator($nameTourOperator, $linkTourOperator);
+
+    //envoi l'imageimporté par l'user vers notre dossier img
+    $randomNum = rand(1,100);
+    $uploads_dir = '../assets/img/logoTO';
+    $name = $randomNum. $_FILES['addLogoTO']['name'];
+    $tmp_name = $_FILES['addLogoTO']['tmp_name'];
+    move_uploaded_file($tmp_name, "$uploads_dir/$name");
+    //on déclare une variable qui contient le nouveau chemin de l'image
+    $imgPath = "$uploads_dir/$name";
+
+
+$bdd->createTourOperator($nameTourOperator, $linkTourOperator, $imgPath);
 header('Location: ../pages/pagesAdmin/homePageAdmin.php?validation1=success'); 
