@@ -25,14 +25,14 @@ class Card
 class CardDestinationTO extends Card
 {
 
-  public function __construct($nameTO, $priceDestinationTO)
+  public function __construct($nameTO, $priceDestinationTO, $imgPath)
   {
     echo ('
           <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="../assets/img/Turquie.jpeg" alt="Card image cap">
+          <img class="card-img-top" src="'.$imgPath.'" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">'.$nameTO.'</h5>
-            <p class="card-text">Séjour à partir de'.$priceDestinationTO.' €.</p>
+            <p class="card-text">Séjour à partir de '.$priceDestinationTO.' €.</p>
             <a href="#" class="btn btn-primary">Voir l\'offre</a>
           </div>
         </div>');

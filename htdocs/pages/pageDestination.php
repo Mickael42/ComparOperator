@@ -70,7 +70,8 @@ require "../partials/classes/Card.php";
       foreach ($allOperators as $operator) {
       $nameTO = $operator['name'];
       $priceDestinationTO = $operator['price'];
-      $cardDestinationByTO = new CardDestinationTO ($nameTO, $priceDestinationTO);
+      $logoTO = $operator['imgPath'];
+      $cardDestinationByTO = new CardDestinationTO ($nameTO, $priceDestinationTO, $logoTO);
 
       }
       ?>
