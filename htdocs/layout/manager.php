@@ -26,7 +26,7 @@ class Manager
         $req = $this->bdd->prepare("SELECT * FROM destinations 
                                     INNER JOIN tour_operators 
                                     ON destinations.id_tour_operator = tour_operators.id  
-                                    WHERE destinations.location= ? 
+                                    WHERE destinations.location= ?  
                                     EXCEPT 
                                     SELECT * FROM destinations
                                     INNER JOIN tour_operators 

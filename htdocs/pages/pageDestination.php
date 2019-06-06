@@ -33,7 +33,40 @@ $allOperator = $bdd->getOperatorByDestination($nameDestination);
 <?php include('../partials/header.php');
 var_dump($allOperator);
 ?>
+
 <body>
+
+    <section id="imageDestination" style="background: url(https://www.villanovo.fr/images/landing_pages/landing_56_133_1507643339.1920.jpg) center;">
+        <div class="titleDestination">
+            <h2>Nos séjours en Grèce </h2>
+            <h5>Cillum consectetur commodo do aute sint.</h5>
+        </div>
+    </section>
+
+    <div class="destinationParagraphe">
+        <h3>Occaecat ex irure proident </h3>
+        <p>Exercitation culpa Lorem laboris ad nisi veniam labore nostrud cillum adipisicing ipsum. Cupidatat cillum eu culpa aliqua enim excepteur labore in cupidatat excepteur in elit sint ad. Eiusmod consectetur proident quis aute enim dolore ex nulla. Nisi est ullamco pariatur irure et enim do occaecat anim amet reprehenderit voluptate sint tempor. Ipsum culpa ipsum irure ex non. Tempor et commodo nisi nulla deserunt voluptate occaecat magna. Duis consequat officia Lorem fugiat incididunt voluptate est ullamco labore elit consectetur.</p>
+        <h3>Quis laboris enim aliqua dolor ! </h3>
+        <p>Excepteur voluptate adipisicing sit consectetur sunt tempor quis Lorem non. Sit laborum ex irure sunt laborum proident magna sit esse esse ex dolor pariatur labore. Fugiat adipisicing incididunt sint cillum sunt mollit irure cupidatat duis excepteur ea cillum dolor labore.</p>
+    </div>
+
+    <h3 class="titreContainerCard">Liste des tours opérateurs :</h3>
+    <div class="container">
+        <div class="row">
+
+        <div class="col-sm">
+          <div class="card cardDestination">
+            <img class="card-img-top" src="https://picsum.photos/230/230"  alt="Card image cap">
+              <div class="card-img-overlay">
+                <h5 class="card-title">' . $destination . '</h5>
+                  <form action="pageDestination.php" = method="get">
+                  <input type ="hidden" name="selectionDestination" value="' . $destination . '">
+                  <input type="submit" class="btn btn-primary" value="Voir nos offres"> 
+                  </form>
+              </div>
+            </div>
+          </div>
+
 
     <?php include('../partials/brandBanner.php') ?>
     <?php include('../partials/footer.php') ?>
