@@ -34,23 +34,6 @@ $bdd = new Manager('127.0.0.1');
     //on récupère toutes les destinations dans la BDD
     $allDestinations = $bdd->getAllDestination();
     ?>
-        <form action="pageDestination.php" class="selectionDestination" method="get">
-                <label for="mdb-select md-form">Choissiez votre destination</label>
-                <select class="mdb-select md-form" id="selection" name="selectionDestination">
-                    <option value="" disabled selected>Liste des destination</option>
-                    <?php
-                    foreach ($allDestinations as $destination) {
-
-                        //on récupère et affiche le nom de la destination
-                        $destination = new Destination($destination);
-                        $nameDestination = $destination->getLocation();
-                        echo ('<option value="' . $nameDestination . '">' . $nameDestination . '</option>');
-                    }
-                    ?>
-                </select>
-                <input type="submit" value="Valider"> 
-        </form>
- 
 
     <h3 class="titreContainerCard">Toutes nos destinations :</h3>
     <div class="container">

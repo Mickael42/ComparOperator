@@ -144,6 +144,11 @@ text-align: center;
 }
 
 /* Style partie Admin */
+.bodyAdmin{
+overflow : hidden;
+}
+
+
 .formAdmin{
   transform: translateY(90px);
   padding: 10px;
@@ -162,7 +167,7 @@ text-align: center;
 
 
 .contentPage{
-  background: url(https://www.villanovo.fr/images/landing_pages/landing_56_133_1507643339.1920.jpg) center;
+  background: url(https://www.villanovo.fr/images/landing_pages/landing_56_133_1507643339.1920.jpg);
   filter: grayscale(60%);
   -webkit-filter: grayscale(60%);
   -moz-filter: grayscale(60%);
