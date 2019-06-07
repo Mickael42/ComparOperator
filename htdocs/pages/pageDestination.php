@@ -52,8 +52,7 @@ require "../partials/classes/Card.php";
 
   <section id="imageDestination" style="background: url(../assets/img/<?php echo ($destinationSelectedImg) ?>);background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
     <div class="titleDestination">
-      <h2>Nos séjours en <?= $destinationSelectedName ?> </h2>
-      <h5>Cillum consectetur commodo do aute sint.</h5>
+      <h2>Nos séjours :  <?= $destinationSelectedName ?> </h2>
     </div>
   </section>
 
@@ -64,7 +63,7 @@ require "../partials/classes/Card.php";
     <p>Excepteur voluptate adipisicing sit consectetur sunt tempor quis Lorem non. Sit laborum ex irure sunt laborum proident magna sit esse esse ex dolor pariatur labore. Fugiat adipisicing incididunt sint cillum sunt mollit irure cupidatat duis excepteur ea cillum dolor labore.</p>
   </div>
 
-  <h3 class="titreContainerCard">Liste des tours opérateurs :</h3>
+  <h3 class="titreContainerCard">TOUS NOS TOURS OPÉRATEURS </h3>
   <div class="container">
     <div class="row">
       <?php
@@ -73,9 +72,10 @@ require "../partials/classes/Card.php";
         $priceDestinationTO = $operator['price'];
         $logoTO = $operator['imgPath'];
         $idOperator = $operator['id'];
+        $opertorNumberOfGrade = $operator['numberOfGrade'];
         $allReviewsByOperator= $bdd->getReviewByOperatorId($idOperator);
 
-        $cardDestinationByTO = new CardDestinationTO($nameTO, $priceDestinationTO, $logoTO, $idOperator, $allReviewsByOperator,$destinationSelectedName);
+        $cardDestinationByTO = new CardDestinationTO($nameTO, $priceDestinationTO, $logoTO, $idOperator, $allReviewsByOperator,$destinationSelectedName, $opertorNumberOfGrade);
       }
       ?>
 

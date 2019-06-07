@@ -7,7 +7,7 @@ class Manager
     public function __construct($hostName)
     {
         try {
-            $this->bdd = new PDO('mysql:host='.$hostName.';dbname=ComparOperator;charset=utf8', 'root', '');
+            $this->bdd = new PDO('mysql:host='.$hostName.';dbname=ComparOperatorCM;charset=utf8', 'root', '');
             $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
@@ -58,11 +58,11 @@ class Manager
         return $reviewByOperatorID;
     }
 
-    public function updateGrade($idOperator, $grade)
+    public function updateGrade($grade, $idOperator)
     {
         $req = $this->bdd->prepare("UPDATE tour_operators 
-                                    SET numberOfGrade = numberOfGrade +1
-                                    SET  grade = (numberOfGrade * grade + ?)/numberOfGrade+1
+                                    SET numberOfGrade = numberOfGrade +1 , 
+                                    grade = numberOfGrade * (grade + ?)/numberOfGrade
                                     WHERE id = ?");
         $req->execute(array($grade, $idOperator,));
      }

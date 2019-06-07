@@ -35,8 +35,8 @@ $bdd = new Manager('192.168.1.15');
     $allDestinations = $bdd->getAllDestination();
     ?>
 
-    <h3 class="titreContainerCard">DÉCOUVREZ TOUTES NOS DESTINATIONS</h3>
-    <div class="container">
+    <h3 class="titreContainerCard" id="titleContentDestinations">DÉCOUVREZ TOUTES NOS DESTINATIONS</h3>
+    <div class="container allCardDestination">
         <div class="row">
             <?php
             //pour chaque destinations

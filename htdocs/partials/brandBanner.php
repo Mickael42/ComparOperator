@@ -18,12 +18,11 @@
              <div class="clear"></div>
          </ul>
 
-
-         <footer class="page-footer font-small blue">
-<div class="footer-copyright text-center py-3"> 
-  <a href="https://mdbootstrap.com/education/bootstrap/">Copyright: MDBootstrap.com</a>
-</div>
-</footer>
-
-
+         <footer class="page-footer font-small blue ">
+             <div class="footer-copyright text-center py-3">
+                 <p id="footer" style="color: #5392a8">Copyright: C&M Web Agency</p>
+             </div>
+         </footer>
  </section>
+
+

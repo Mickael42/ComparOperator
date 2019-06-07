@@ -12,4 +12,5 @@ require "manager.php";
 $bdd = new Manager('127.0.0.1');
 
 $bdd->createReview($message, $nameAuthor, $idOperator);
+$bdd->updateGrade($grade, $idOperator);
 header('Location: ../pages/pageDestination.php?selectionDestination='.$nameDestination.''); 

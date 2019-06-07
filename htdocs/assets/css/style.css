@@ -22,6 +22,10 @@ html {
   
 }
 
+.allCardDestination{
+  margin-bottom: 100px;
+}
+
 .text {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -34,17 +38,24 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #a9aaaa;
     font-size: 15px;
+   
 
 }
 
 #main-image {
-    font-family: 'Montserrat', sans-serif;
-    height: 580px;
-    font-size: 25px;
-    color: white;
-    background: url(../img/imageprincipale.jpg) center;
-
+    height: 600px;
+    width :100%;
+    
 } 
+
+#imgPrincipale{
+  width: 98%;
+  height: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 
 
 .wrapper {
@@ -102,6 +113,7 @@ text-align: center;
 }
 #step-1 {
   background: url('../img/icons/steps_icon_1_1.png') no-repeat top center;
+  
 
 }
 #step-2 {
@@ -114,16 +126,15 @@ text-align: center;
 /* Style Cards */
 
 .titreContainerCard{
-  margin-top: 10px;
+  margin-top: 70px;
   margin-bottom: 10px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  font-size: 15px;
+  font-size: 25px;
   color: #5392a8;
   
 }
-
 
 .cardDestination{
   margin : 3px;
@@ -168,16 +179,16 @@ text-align: center;
   height: 580px;
 }
 
-.titleDestination{
-  font-family: 'Montserrat', sans-serif;
-  color: white;
-  padding-top : 400px;
-}
-
 
 .titleDestination > h2{
   font-size: 70px;
-  color: #5392a8;
+  color: white;
+  text-shadow: 2px 2px #5392a8 ;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  padding-top : 400px;
+  text-transform: uppercase;
+
 }
 
 .destinationParagraphe{
@@ -268,3 +279,56 @@ text-align: center;
   color : black;
 }
 
+.cardTO{
+  text-align: center;
+  border: 1px solid #a9aaaa;
+  -webkit-box-shadow: 5px 5px 11px 0px rgba(0,0,0,0.58); 
+box-shadow: 5px 5px 11px 0px rgba(0,0,0,0.58);
+margin : 15px;
+}
+
+.imgTO{
+  padding-right : 30px;
+  padding-left : 30px;
+  padding-top: 10px;
+  max-width: 100%;
+}
+
+.imgModalTO{
+  width:150px;
+}
+
+.modalGradeTO{
+  padding-top : 30px;
+  width : 150px;
+  padding-left: 20px;
+}
+
+.stars{
+  padding-top: 60px;
+transform: translateX(-140px)
+}
+
+.bodyReviews{
+  max-height: 300px;
+  overflow-y: auto;
+  text-align: center;
+
+
+}
+
+.titleReviewsContent {
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.inputFormReview{
+  padding-left :10px;
+}
+
+#grade{
+margin-left : 25%;
+}
