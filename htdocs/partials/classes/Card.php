@@ -28,7 +28,7 @@ class CardDestinationTO extends Card
   public function __construct($nameTO, $priceDestinationTO, $imgPath, $idOperator, $reviews,$destinationSelectedName, $operatorNumberOfGrade)
   {
     echo ('
-          <div class="card cardTO" style="width: 18rem;">
+          <div class="card" id="cardTO" style="width: 18rem">
           <img class="card-img-top imgTO" src="' . $imgPath . '" alt="Card image cap">
           <div class="card-body cardBodyTO">
             <h5 class="card-title cardNameTO">' . $nameTO . '</h5>

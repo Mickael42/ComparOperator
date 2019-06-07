@@ -65,7 +65,7 @@ require "../partials/classes/Card.php";
 
   <h3 class="titreContainerCard">TOUS NOS TOURS OPÉRATEURS </h3>
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
       <?php
       foreach ($allOperators as $operator) {
         $nameTO = $operator['name'];

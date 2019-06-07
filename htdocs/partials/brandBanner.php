@@ -20,7 +20,7 @@
 
          <footer class="page-footer font-small blue ">
              <div class="footer-copyright text-center py-3">
-                 <p id="footer" style="color: #5392a8">Copyright: C&M Web Agency</p>
+                 <p id="footer" style="color: #5392a8">Copyright: C&M Web Agency | Contacts: Cmwebagency@gmail.com</p>
              </div>
          </footer>
  </section>
