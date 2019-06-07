@@ -58,11 +58,11 @@ class Manager
         return $reviewByOperatorID;
     }
 
-    public function updateGrade($idOperator, $grade)
+    public function updateGrade($grade, $idOperator)
     {
         $req = $this->bdd->prepare("UPDATE tour_operators 
-                                    SET numberOfGrade = numberOfGrade +1
-                                    SET  grade = (numberOfGrade * grade + ?)/numberOfGrade+1
+                                    SET numberOfGrade = numberOfGrade +1 , 
+                                    grade = numberOfGrade * (grade + ?)/numberOfGrade
                                     WHERE id = ?");
         $req->execute(array($grade, $idOperator,));
      }

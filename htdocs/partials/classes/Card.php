@@ -13,7 +13,7 @@ class Card
                 <h5 class="card-title">' . $destination . '</h5>
                   <form action="pageDestination.php" = method="get">
                   <input type ="hidden" name="selectionDestination" value="' . $destination . '">
-                  <input type="submit" class="btn btn-primary" value="Voir nos offres"> 
+                  <input type="submit" class="btn btn-outline-light" value="Voir nos offres"> 
                   </form>
               </div>
             </div>
@@ -25,14 +25,14 @@ class Card
 class CardDestinationTO extends Card
 {
 
-  public function __construct($nameTO, $priceDestinationTO, $imgPath, $idOperator, $reviews,$destinationSelectedName)
+  public function __construct($nameTO, $priceDestinationTO, $imgPath, $idOperator, $reviews,$destinationSelectedName, $operatorGrade)
   {
     echo ('
           <div class="card" style="width: 18rem;">
           <img class="card-img-top" src="' . $imgPath . '" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">' . $nameTO . '</h5>
-            <p class="card-text">Séjour à partir de ' . $priceDestinationTO . ' €.</p>
+            <p class="card-text">Séjour à partir de <strong>' . $priceDestinationTO . ' €</strong>.</p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal' . $idOperator . '">Voir le profil de ' . $nameTO . '</button>
           </div>
         </div>
@@ -44,6 +44,7 @@ class CardDestinationTO extends Card
            <div class="modal-content">
               <div class="modal-header">
                 <img src="' . $imgPath . '">  
+                <p>Note moyenne du tour opérateur : '.$operatorGrade.'/5</p>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
