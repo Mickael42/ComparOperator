@@ -7,7 +7,7 @@ class Manager
     public function __construct($hostName)
     {
         try {
-            $this->bdd = new PDO('mysql:host='.$hostName.';dbname=ComparOperator;charset=utf8', 'root', '');
+            $this->bdd = new PDO('mysql:host='.$hostName.';dbname=ComparOperatorCM;charset=utf8', 'root', '');
             $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
