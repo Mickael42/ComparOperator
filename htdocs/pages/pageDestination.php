@@ -19,8 +19,8 @@ $allOperators = $bdd->getOperatorByDestination($nameDestination);
 $allDestinations = $bdd->getAllDestination();
 
 //on séléctionne toutes les infos de la destination qui a été selectionnée
-foreach($allDestinations as $destination){
-  if ($destination['location'] == $nameDestination){
+foreach ($allDestinations as $destination) {
+  if ($destination['location'] == $nameDestination) {
     $destinationSelected = new Destination($destination);
     $destinationSelectedName = $destinationSelected->getLocation();
     $destinationSelectedImg = $destinationSelected->getImgName();
@@ -45,13 +45,14 @@ require "../partials/classes/Card.php";
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <title>ComparOperator</title>
 </head>
-<?php include('../partials/header.php');?>
+<?php include('../partials/header.php'); ?>
 
 <body>
 
-  <section id="imageDestination" style="background: url(../assets/img/<?php echo($destinationSelectedImg)?>);background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
+
+  <section id="imageDestination" style="background: url(../assets/img/<?php echo ($destinationSelectedImg) ?>);background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
     <div class="titleDestination">
-      <h2>Nos séjours en <?=$destinationSelectedName?> </h2>
+      <h2>Nos séjours en <?= $destinationSelectedName ?> </h2>
       <h5>Cillum consectetur commodo do aute sint.</h5>
     </div>
   </section>
@@ -68,21 +69,31 @@ require "../partials/classes/Card.php";
     <div class="row">
       <?php
       foreach ($allOperators as $operator) {
-      $nameTO = $operator['name'];
-      $priceDestinationTO = $operator['price'];
-      $logoTO = $operator['imgPath'];
-      $cardDestinationByTO = new CardDestinationTO ($nameTO, $priceDestinationTO, $logoTO);
+        $nameTO = $operator['name'];
+        $priceDestinationTO = $operator['price'];
+        $logoTO = $operator['imgPath'];
+        $idOperator = $operator['id'];
+        $allReviewsByOperator= $bdd->getReviewByOperatorId($idOperator);
 
+        $cardDestinationByTO = new CardDestinationTO($nameTO, $priceDestinationTO, $logoTO, $idOperator, $allReviewsByOperator,$destinationSelectedName);
       }
       ?>
 
 
+
       <?php include('../partials/brandBanner.php') ?>
       <?php include('../partials/footer.php') ?>
+
+
+
 </body>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script>
+  //set button id on click to hide first modal
+</script>
 
 </html>

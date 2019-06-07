@@ -10,7 +10,7 @@ $allOperators = $bdd->getAllOperator();
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html id ='htmlAdmin' lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@ $allOperators = $bdd->getAllOperator();
 
 <?php include('../../partials/headerAdmin.php') ?>
 
-<body class="bodyAdmin" >
+<body id="bodyAdmin">
     <?php include('../../partials/sidebar.php') ?>
 
 <div class="contentPage">
@@ -36,7 +36,6 @@ $allOperators = $bdd->getAllOperator();
             echo '<p class="successMessage">Le  tour opérateur est bien passé en Premium!</p>';
         }?>
 </div>
-
 
 </body>
 
