@@ -4,9 +4,11 @@ class TourOperator {
     private $id;
     private $name;
     private $grade;
+    private $numberOfGrade;
     private $link;
     private $imgPath;
     private $is_premium;
+
 
     public function __construct(array $operator){
             $this->id = $operator['id'];
@@ -41,5 +43,10 @@ class TourOperator {
     public function getImgPath(){
         return $this->imgPath;
     }
+
+    public function getNumberOfGrade(){
+        return $this->numberOfGrade;
+    }
+
 
 }

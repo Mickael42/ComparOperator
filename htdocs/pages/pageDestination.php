@@ -73,11 +73,9 @@ require "../partials/classes/Card.php";
         $priceDestinationTO = $operator['price'];
         $logoTO = $operator['imgPath'];
         $idOperator = $operator['id'];
-        $cardDestinationByTO = new CardDestinationTO($nameTO, $priceDestinationTO, $logoTO, $idOperator);
+        $allReviewsByOperator= $bdd->getReviewByOperatorId($idOperator);
 
-
-
-
+        $cardDestinationByTO = new CardDestinationTO($nameTO, $priceDestinationTO, $logoTO, $idOperator, $allReviewsByOperator,$destinationSelectedName);
       }
       ?>
 

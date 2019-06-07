@@ -50,12 +50,22 @@ class Manager
 
     public function getReviewByOperatorId($idOperator)
     {
-        $req = $this->bdd->prepare("SELECT * FROM reviews INNER JOIN tour_operators WHERE id_tour_operator= ?");
+        $req = $this->bdd->prepare("SELECT * FROM reviews INNER JOIN tour_operators ON reviews.id_tour_operator = tour_operators.id   WHERE id_tour_operator= ?");
         $req->execute(array(
             $idOperator
         ));
-        $reviewByOperatorID = $req->fetch();
+        $reviewByOperatorID = $req->fetchAll();
+        return $reviewByOperatorID;
     }
+
+    public function updateGrade($idOperator, $grade)
+    {
+        $req = $this->bdd->prepare("UPDATE tour_operators 
+                                    SET numberOfGrade = numberOfGrade +1
+                                    SET  grade = (numberOfGrade * grade + ?)/numberOfGrade+1
+                                    WHERE id = ?");
+        $req->execute(array($grade, $idOperator,));
+     }
 
 
 ////////////////////////////////Méthodes pour la partie Admin/////////////////////////////////////////////
